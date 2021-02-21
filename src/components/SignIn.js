@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 import { SignUpLink } from './SignUp';
@@ -15,69 +15,57 @@ const SignInPage = () => {
 	);
 };
 
-const INITIAL_STATE = {
-	email: '',
-	password: '',
-	err: null,
-};
+const SignInFormBase = (props) => {
+	const [state, setState] = useState({ email: '', password: '', err: null });
 
-class SignInFormBase extends Component {
-	constructor(props) {
-		super(props);
+	const onSubmit = (e) => {
+		const { email, password } = state;
 
-		this.state = { ...INITIAL_STATE };
-	}
-
-	onSubmit = (e) => {
-		const { email, password } = this.state;
-
-		this.props.firebase
+		props.firebase
 			.doSignInWithEmailAndPassword(email, password)
 			.then(() => {
-				this.setState({ ...INITIAL_STATE });
-				this.props.history.push(ROUTES.HOME);
+				setState({ ...state });
+				props.history.push(ROUTES.HOME);
 			})
-			.catch((error) => {
-				this.setState({ error });
+			.catch((err) => {
+				setState({ err });
 			});
 
 		e.preventDefault();
 	};
 
-	onChange = (e) => {
-		this.setState({ [e.target.name]: e.target.value });
+	const onChange = (e) => {
+		setState({ ...state, [e.target.name]: e.target.value });
 	};
 
-	render() {
-		const { email, password, err } = this.state;
+	const { email, password, err } = state;
 
-		const isInvalid = password === '' || email === '';
+	const isInvalid = password === '' || email === '';
 
-		return (
-			<form onSubmit={this.onSubmit}>
-				<input
-					name="email"
-					value={email}
-					type="text"
-					onChange={this.onChange}
-					placeholder="Email"
-				/>
-				<input
-					name="password"
-					value={password}
-					type="password"
-					onChange={this.onChange}
-					placeholder="Hasło"
-				/>
-				<button disabled={isInvalid} type="submit">
-					Zaloguj Się
-				</button>
+	return (
+		<form onSubmit={onSubmit}>
+			<input
+				name="email"
+				value={email}
+				type="text"
+				onChange={onChange}
+				placeholder="Email"
+			/>
+			<input
+				name="password"
+				value={password}
+				type="password"
+				onChange={onChange}
+				placeholder="Hasło"
+			/>
+			<button disabled={isInvalid} type="submit">
+				Zaloguj Się
+			</button>
 
-				{err && <p>{err.message}</p>}
-			</form>
-		);
-	}
-}
+			{err && <p>{err.message}</p>}
+		</form>
+	);
+};
 
 const SignInLink = () => {
 	return (
