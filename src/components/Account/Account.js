@@ -8,6 +8,7 @@ const AccountPage = (props) => {
 	return (
 		<>
 			<div className="Container">
+				<b>To jest profil użytkownika</b>
 				username: {displayName} email: {email} uid: {uid}
 			</div>
 		</>
