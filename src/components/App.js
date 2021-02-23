@@ -55,11 +55,10 @@ class App extends Component {
 
 // const App = (props) => {
 // 	const [authUser, setAuthUser] = useState(null);
-// 	const listener = useCallback(() => {
+// 	const listener =
 // 		props.firebase.auth.onAuthStateChanged((authUser) => {
 // 			authUser ? setAuthUser({ authUser }) : setAuthUser({ authUser: null });
 // 		});
-// 	});
 
 // 	useEffect(() => {
 // 		listener();
