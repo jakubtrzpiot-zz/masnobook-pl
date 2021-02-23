@@ -18,12 +18,7 @@ class Firebase {
 		this.db = app.database();
 	}
 	// *** User Data ***
-	// UserInfo = this.auth.currentUser;
-	// currentUserInfo = {
-	// 	name: this.userInfo.displayName,
-	// 	email: this.userInfo.email,
-	// 	uid: this.userInfo.uid,
-	// };
+	userInfo = () => this.auth.currentUser;
 	// *** Auth API ***
 	doCreateUserWithEmailAndPassword = (email, password) =>
 		this.auth.createUserWithEmailAndPassword(email, password);

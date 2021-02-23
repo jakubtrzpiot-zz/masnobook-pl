@@ -1,11 +1,16 @@
 import React from 'react';
 import './account.scss';
 
-const AccountPage = () => {
+import { withFirebase } from '../Firebase/index';
+
+const AccountPage = (props) => {
+	const { uid, displayName, email } = props.firebase.userInfo();
 	return (
 		<>
-			<div className="Container"></div>
+			<div className="Container">
+				username: {displayName} email: {email} uid: {uid}
+			</div>
 		</>
 	);
 };
-export default AccountPage;
+export default withFirebase(AccountPage);
