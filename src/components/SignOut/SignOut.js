@@ -10,9 +10,9 @@ const SignOutButton = (props) => {
 		props.history.push(ROUTES.LANDING);
 	};
 	return (
-		<button className="SignOutButton" onClick={signOut}>
+		<p className="SignOutButton" onClick={signOut}>
 			Logout
-		</button>
+		</p>
 	);
 };
 
