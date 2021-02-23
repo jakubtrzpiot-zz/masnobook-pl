@@ -1,5 +1,6 @@
 import React from 'react';
+import './home.scss';
 const HomePage = () => {
-	return <></>;
+	return <div className="blue">chuj</div>;
 };
 export default HomePage;

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-import { SignInLink } from './SignIn';
-import { withFirebase } from './Firebase/index';
-import * as ROUTES from '../constants/routes';
+import { SignInLink } from '../SignIn/SignIn';
+import { withFirebase } from '../Firebase/index';
+import * as ROUTES from '../../constants/routes';
 
 const SignUpPage = () => {
 	return (
@@ -32,6 +32,10 @@ const SignUpFormBase = (props) => {
 			.then((authUser) => {
 				setState({ ...state });
 				props.history.push(ROUTES.HOME);
+				return props.firebase.user(authUser.user.uid).set({
+					username,
+					email,
+				});
 			})
 			.catch((error) => {
 				this.setState({ error });

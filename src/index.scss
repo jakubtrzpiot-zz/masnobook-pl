@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-* {
+html {
 	font-family: 'Roboto', sans-serif;
+}
+a {
+	text-decoration: none;
+	outline: none;
+	color: black;
+}
+a:hover {
+	color: lightcoral;
 }

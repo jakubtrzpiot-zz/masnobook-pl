@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-import { SignUpLink } from './SignUp';
-import { withFirebase } from './Firebase/index';
-import * as ROUTES from '../constants/routes';
+import { SignUpLink } from '../SignUp/SignUp';
+import { withFirebase } from '../Firebase/index';
+import * as ROUTES from '../../constants/routes';
 
 const SignInPage = () => {
 	return (
