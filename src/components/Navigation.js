@@ -15,7 +15,7 @@ const NavigationAuth = () => {
       <div className='signContain'>
         <div className='logo'>
           <Link to={ROUTES.HOME}>
-            <img src={logo} alt='masnobook' />
+            <img height='100vh' src={logo} alt='masnobook' />
           </Link>
         </div>
         <div className='signedIn'>
@@ -33,7 +33,7 @@ const NavigationNonAuth = () => (
   <div className='signContain'>
     <div className='logo'>
       <Link to={ROUTES.LANDING}>
-        <img src={logo} alt='masnobook' />
+        <img height='100vh' src={logo} alt='masnobook' />
       </Link>
     </div>
     <div className='signedOut'>
