@@ -1,17 +1,28 @@
 @import "main.scss";
 .signContain {
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
+  justify-content: space-between;
   width: 100vw;
   height: 10vh;
-  background-color: rgba(255, 204, 204, 0.5);
+  background-color: rgba(255, 204, 204, 1);
   color: black;
 }
 .signedIn {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  justify-self: center;
 }
 .signedOut {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  justify-self: center;
 }
 a {
   color: inherit;
+}
+.logo {
+  display: flex;
+  align-self: center;
 }
