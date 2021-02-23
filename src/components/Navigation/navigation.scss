@@ -13,6 +13,7 @@
 .signedIn {
   display: inline-block;
   margin-right: 1vw;
+  text-align: center;
 }
 .signedOut {
   display: flex;
@@ -26,6 +27,6 @@ a {
   text-decoration: none;
 }
 .logo {
-  display: flex;
-  margin-left: 1vw;
+  margin-left: 0.5vw;
+  height: 10vh;
 }
