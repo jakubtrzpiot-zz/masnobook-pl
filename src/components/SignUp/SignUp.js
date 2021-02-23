@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import './signUp.scss';
+import './signup.scss';
 
 import { SignInLink } from '../SignIn/SignIn';
 import { withFirebase } from '../Firebase/index';

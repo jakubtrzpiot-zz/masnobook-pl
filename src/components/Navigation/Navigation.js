@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './navigation.scss';
-import logo from '../constants/masnobook-logo.png';
+import logo from '../../constants/masnobook-logo.png';
 
 import SignOutButton from '../SignOut/SignOut';
 import * as ROUTES from '../../constants/routes';
