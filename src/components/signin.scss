@@ -1,3 +1,9 @@
+@import "main.scss";
 body {
   color: black;
+}
+.signInForm {
+  display: flex;
+  align-items: center;
+  color: white;
 }

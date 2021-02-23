@@ -1,0 +1,17 @@
+@import "main.scss";
+.signContain {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+  background-color: rgba(255, 204, 204, 0.5);
+  color: black;
+}
+.signedIn {
+}
+.signedOut {
+}
+a {
+  color: inherit;
+}

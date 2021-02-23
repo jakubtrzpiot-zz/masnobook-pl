@@ -1,5 +1,12 @@
-import React from 'react';
+import React from "react";
+import "./home.scss";
 const HomePage = () => {
-	return <></>;
+  return (
+    <>
+      <div class='mainbody'>
+        <div>eulo</div>
+      </div>
+    </>
+  );
 };
 export default HomePage;
