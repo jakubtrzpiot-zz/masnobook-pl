@@ -11,10 +11,9 @@ const withAuthentication = (Component) => {
 				authUser ? setAuthUser(authUser) : setAuthUser(null);
 			};
 			props.firebase.auth.onAuthStateChanged(handleStatusChange);
-			return () => {
-				props.firebase.auth.onAuthStateChanged(handleStatusChange);
-			};
+			return () => props.firebase.auth.onAuthStateChanged(handleStatusChange);
 		});
+
 		return (
 			<AuthUserContext.Provider value={authUser}>
 				<Component {...props} />

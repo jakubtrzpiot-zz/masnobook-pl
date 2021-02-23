@@ -1,17 +1,20 @@
 import React from 'react';
 import './account.scss';
 
-import { withFirebase } from '../Firebase/index';
+import { AuthUserContext, withAuthorization } from '../Session';
 
-const AccountPage = (props) => {
-	const { uid, displayName, email } = props.firebase.userInfo();
+const AccountPage = () => {
 	return (
-		<>
-			<div className="Container">
-				<b>To jest profil użytkownika</b>
-				username: {displayName} email: {email} uid: {uid}
-			</div>
-		</>
+		<AuthUserContext.Consumer>
+			{(authUser) => (
+				<div>
+					<h1>Email: {authUser.email}</h1>
+					<h1>Uid: {authUser.uid}</h1>
+					<h1>Username: {authUser.username}</h1>
+				</div>
+			)}
+		</AuthUserContext.Consumer>
 	);
 };
-export default withFirebase(AccountPage);
+const condition = (authUser) => !!authUser;
+export default withAuthorization(condition)(AccountPage);

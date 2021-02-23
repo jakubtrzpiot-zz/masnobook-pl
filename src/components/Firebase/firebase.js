@@ -9,6 +9,8 @@ const firebaseConfig = {
 	storageBucket: 'masnobook-pl.appspot.com',
 	messagingSenderId: '346932485545',
 	appId: '1:346932485545:web:890ec81a5a47fcd5fc38b8',
+	databaseURL:
+		'https://masnobook-pl-default-rtdb.europe-west1.firebasedatabase.app/',
 };
 class Firebase {
 	constructor() {
