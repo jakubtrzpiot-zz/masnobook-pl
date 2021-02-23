@@ -8,10 +8,12 @@ import * as ROUTES from "../constants/routes";
 
 const SignInPage = () => {
   return (
-    <div>
-      <h1>Zaloguj Się</h1>
-      <SignInForm />
-      <SignUpLink />
+    <div className='Container'>
+      <div className='signInForm'>
+        <h1>Zaloguj Się</h1>
+        <SignInForm />
+        <SignUpLink />
+      </div>
     </div>
   );
 };

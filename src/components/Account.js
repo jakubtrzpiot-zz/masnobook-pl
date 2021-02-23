@@ -1,5 +1,11 @@
 import React from "react";
+import "./account.scss";
+
 const AccountPage = () => {
-  return <></>;
+  return (
+    <>
+      <div className='Container'></div>
+    </>
+  );
 };
 export default AccountPage;

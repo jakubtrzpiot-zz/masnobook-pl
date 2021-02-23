@@ -1,6 +1,9 @@
 @import "main.scss";
-body {
-  color: $black;
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
 }
 .Container {
   width: 100vw;

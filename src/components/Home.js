@@ -3,9 +3,7 @@ import "./home.scss";
 const HomePage = () => {
   return (
     <>
-      <div class='mainbody'>
-        <div>eulo</div>
-      </div>
+      <div class='Container'></div>
     </>
   );
 };
