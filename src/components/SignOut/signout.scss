@@ -1,0 +1,11 @@
+@import '../main.scss';
+.SignOutButton {
+	text-decoration: none;
+	font-weight: bold;
+	border: none;
+	background: none;
+}
+.SignOutButton:hover {
+	color: lightcoral;
+	cursor: pointer;
+}

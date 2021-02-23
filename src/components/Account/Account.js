@@ -1,11 +1,11 @@
 import React from 'react';
-import { withFirebase } from '../Firebase/index';
+import './account.scss';
 
-const AccountPage = (props) => {
+const AccountPage = () => {
 	return (
 		<>
-			<div></div>
+			<div className="Container"></div>
 		</>
 	);
 };
-export default withFirebase(AccountPage);
+export default AccountPage;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import './signup.scss';
 
 import { SignInLink } from '../SignIn/SignIn';
 import { withFirebase } from '../Firebase/index';
@@ -7,10 +8,12 @@ import * as ROUTES from '../../constants/routes';
 
 const SignUpPage = () => {
 	return (
-		<div>
-			<h1>Zarejestruj Się</h1>
-			<SignUpForm />
-			<SignInLink />
+		<div className="Container">
+			<div className="signUpForm">
+				<h1>Zarejestruj Się</h1>
+				<SignUpForm />
+				<SignInLink />
+			</div>
 		</div>
 	);
 };
@@ -57,7 +60,7 @@ const SignUpFormBase = (props) => {
 		username === '';
 
 	return (
-		<form onSubmit={onSubmit}>
+		<form className="signUpForm" onSubmit={onSubmit}>
 			<input
 				name="username"
 				value={username}

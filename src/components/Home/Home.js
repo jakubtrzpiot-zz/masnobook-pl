@@ -1,6 +1,10 @@
 import React from 'react';
 import './home.scss';
 const HomePage = () => {
-	return <div className="blue">chuj</div>;
+	return (
+		<>
+			<div class="Container"></div>
+		</>
+	);
 };
 export default HomePage;

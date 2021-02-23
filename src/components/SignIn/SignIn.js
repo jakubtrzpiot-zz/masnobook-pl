@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import './signin.scss';
 
 import { SignUpLink } from '../SignUp/SignUp';
 import { withFirebase } from '../Firebase/index';
@@ -7,10 +8,12 @@ import * as ROUTES from '../../constants/routes';
 
 const SignInPage = () => {
 	return (
-		<div>
-			<h1>Zaloguj Się</h1>
-			<SignInForm />
-			<SignUpLink />
+		<div className="Container">
+			<div className="signInForm">
+				<h1>Zaloguj Się</h1>
+				<SignInForm />
+				<SignUpLink />
+			</div>
 		</div>
 	);
 };
@@ -43,7 +46,7 @@ const SignInFormBase = (props) => {
 	const isInvalid = password === '' || email === '';
 
 	return (
-		<form onSubmit={onSubmit}>
+		<form className="signInForm" onSubmit={onSubmit}>
 			<input
 				name="email"
 				value={email}

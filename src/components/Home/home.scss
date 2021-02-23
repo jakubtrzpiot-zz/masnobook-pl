@@ -1,3 +1,9 @@
-.blue {
-	color: blue;
+@import '../main.scss';
+body {
+	color: $black;
+}
+.Container {
+	width: 100vw;
+	height: 90vh;
+	background-color: rgba(255, 204, 204, 1);
 }
