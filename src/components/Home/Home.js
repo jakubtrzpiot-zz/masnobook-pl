@@ -1,19 +1,19 @@
-import React from 'react';
-import './home.scss';
+import React from "react";
+import "./home.scss";
 
-import { withAuthorization } from '../Session';
+import { withAuthorization } from "../Session";
 
 const HomePage = () => {
-	return (
-		<>
-			<div class="Container">
-				<center>
-					<b>To jest strona domowa</b> <br></br>
-					<p>The Home Page is accessible by every signed in user.</p>
-				</center>
-			</div>
-		</>
-	);
+  return (
+    <>
+      <div class='homeContainer'>
+        <center>
+          <b>To jest strona domowa</b> <br></br>
+          <p>The Home Page is accessible by every signed in user.</p>
+        </center>
+      </div>
+    </>
+  );
 };
 const condition = (authUser) => !!authUser;
 export default withAuthorization(condition)(HomePage);

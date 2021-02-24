@@ -7,7 +7,7 @@ const AccountPage = () => {
   return (
     <AuthUserContext.Consumer>
       {(authUser) => (
-        <div className='Container'>
+        <div className='accountContainer'>
           <h1>Email: {authUser.email}</h1>
           <h1>Uid: {authUser.uid}</h1>
           <h1>Username: {authUser.username}</h1>

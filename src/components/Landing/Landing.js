@@ -1,14 +1,14 @@
-import React from 'react';
-import './landing.scss';
+import React from "react";
+import "./landing.scss";
 const LandingPage = () => {
-	return (
-		<>
-			<div className="Container">
-				<center>
-					<b>To jest strona startowa</b>
-				</center>
-			</div>
-		</>
-	);
+  return (
+    <>
+      <div className='landingContainer'>
+        <div className='mainPage'>
+          <b>To jest strona startowa</b>
+        </div>
+      </div>
+    </>
+  );
 };
 export default LandingPage;

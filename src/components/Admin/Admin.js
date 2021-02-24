@@ -1,18 +1,18 @@
-import React from 'react';
-import './admin.scss';
+import React from "react";
+import "./admin.scss";
 
 // import * as ROLES from '../../constants/roles';
-import { withAuthorization } from '../Session/index';
+import { withAuthorization } from "../Session/index";
 
 const AdminPage = () => {
-	return (
-		<>
-			<div className="Container">
-				<h1>Admin</h1>
-				<p>Restricted area! Only users with the admin role are authorized.</p>
-			</div>
-		</>
-	);
+  return (
+    <>
+      <div className='adminContainer'>
+        <h1>Admin</h1>
+        <p>Restricted area! Only users with the admin role are authorized.</p>
+      </div>
+    </>
+  );
 };
 
 const condition = (authUser) => !!authUser;
