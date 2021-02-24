@@ -10,7 +10,9 @@ const SignUpPage = () => {
 	return (
 		<div className="Container">
 			<div className="signUpForm">
-				<h1>Zarejestruj Się</h1>
+				<br></br>
+				<h1>Zarejestruj się</h1>
+				<br></br>
 				<SignUpForm />
 				<SignInLink />
 			</div>
@@ -33,15 +35,17 @@ const SignUpFormBase = (props) => {
 		props.firebase
 			.doCreateUserWithEmailAndPassword(email, password)
 			.then((authUser) => {
-				setState({ ...state });
-				props.history.push(ROUTES.HOME);
 				return props.firebase.user(authUser.user.uid).set({
 					username,
 					email,
 				});
 			})
-			.catch((error) => {
-				this.setState({ error });
+			.then(() => {
+				setState({ ...state });
+				props.history.push(ROUTES.HOME);
+			})
+			.catch((err) => {
+				setState({ err });
 			});
 
 		e.preventDefault();
@@ -67,6 +71,7 @@ const SignUpFormBase = (props) => {
 				onChange={onChange}
 				placeholder="Nazwa użytkownika"
 			/>
+			<br></br>
 			<input
 				name="email"
 				value={email}
@@ -74,6 +79,7 @@ const SignUpFormBase = (props) => {
 				onChange={onChange}
 				placeholder="Email"
 			/>
+			<br></br>
 			<input
 				name="password"
 				value={password}
@@ -81,6 +87,7 @@ const SignUpFormBase = (props) => {
 				onChange={onChange}
 				placeholder="Hasło"
 			/>
+			<br></br>
 			<input
 				name="repassword"
 				value={repassword}
@@ -88,6 +95,7 @@ const SignUpFormBase = (props) => {
 				onChange={onChange}
 				placeholder="Powtórz hasło"
 			/>
+			<br></br>
 			<button disabled={isInvalid} type="submit">
 				Zarejestruj się
 			</button>
@@ -100,7 +108,10 @@ const SignUpFormBase = (props) => {
 const SignUpLink = () => {
 	return (
 		<>
-			Nie masz konta? <Link to={ROUTES.SIGN_UP}>Zarejestruj się</Link>
+			Nie masz konta?
+			<Link to={ROUTES.SIGN_UP}>
+				<b>Zarejestruj się</b>
+			</Link>
 		</>
 	);
 };

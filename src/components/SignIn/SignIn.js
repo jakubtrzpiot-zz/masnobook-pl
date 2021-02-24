@@ -10,7 +10,9 @@ const SignInPage = () => {
 	return (
 		<div className="Container">
 			<div className="signInForm">
-				<h1>Zaloguj Się</h1>
+				<br></br>
+				<h1>Zaloguj się</h1>
+				<br></br>
 				<SignInForm />
 				<SignUpLink />
 			</div>
@@ -54,6 +56,7 @@ const SignInFormBase = (props) => {
 				onChange={onChange}
 				placeholder="Email"
 			/>
+			<br></br>
 			<input
 				name="password"
 				value={password}
@@ -61,8 +64,9 @@ const SignInFormBase = (props) => {
 				onChange={onChange}
 				placeholder="Hasło"
 			/>
+			<br></br>
 			<button disabled={isInvalid} type="submit">
-				Zaloguj Się
+				Zaloguj się
 			</button>
 
 			{err && <p>{err.message}</p>}
@@ -73,7 +77,10 @@ const SignInFormBase = (props) => {
 const SignInLink = () => {
 	return (
 		<>
-			Masz już konto? <Link to={ROUTES.SIGN_IN}>Zaloguj Się</Link>
+			Masz już konto?{' '}
+			<Link to={ROUTES.SIGN_IN}>
+				<b>Zaloguj się</b>
+			</Link>
 		</>
 	);
 };

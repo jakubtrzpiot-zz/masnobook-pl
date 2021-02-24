@@ -13,12 +13,11 @@ import AdminPage from '../Admin/Admin';
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session/index';
 
-const App = () => {
+const App = (props) => {
 	return (
 		<Router>
 			<div>
 				<Navigation />
-
 				<Route exact path={ROUTES.LANDING} component={LandingPage} />
 				<Route path={ROUTES.SIGN_UP} component={SignUpPage} />
 				<Route path={ROUTES.SIGN_IN} component={SignInPage} />
